@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+    <link rel="stylesheet" href="/styles/bootstrap.css">
+    <link rel="stylesheet" href="/styles/importer.css">
+    <link rel="stylesheet" href="/styles/app.css">
+
+  </head>
+  <body ng-app="signupMod" ng-controller="signupCtrl">
+    <div class="col-lg-4 col-lg-offset-4">
+      <div class="signup-box">
+        <div class="row">
+          <div class="col-lg-12">
+            <h2>UserAuth</h2>
+            <p>Please fill in the fields below signup</p>
+            <form ng-submit="runSignup()">
+              <div class="row" ng-repeat="attr in formAttrs track by $index">
+                <div class="col-lg-12">
+                  <input ng-if="$first" ng-model="test.name"  type={{attr.type}} name={{attr.name}} placeholder={{attr.placeholder}} required>
+                  <input ng-if="!$first" ng-model="attr.type" type={{attr.type}} name={{attr.name}} placeholder={{attr.placeholder}} >
+
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-lg-7">
+                  <input type="submit" class="btn btn-primary submit" value="Create Account">
+                </div>
+                <div class="col-lg-5">
+                  <a class="btn btn-default">Log In</a>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  <script src="/js/dependencies/sails.io.js"></script>
+  <script src="/js/dependencies/jquery-1.11.3.js"></script>
+  <script src="/js/dependencies/angular.min.js"></script>
+  <script src="/js/dependencies/angular-route.min.js"></script>
+  <script src="/js/dependencies/bootstrap.js"></script>
+  <script src="/js/public/signup/signupMod.js"></script>
+  <script src="/js/public/signup/signupCtrl.js"></script>
+  </body>
+</html>
