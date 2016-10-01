@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="/styles/bootstrap.css">
+  <link rel="stylesheet" href="/styles/angular-toastr.css">
+  <link rel="stylesheet" href="/styles/importer.css">
+
+</head>
+
+<body ng-app="dashMod" ng-controller="dashCtrl" ng-init="getUser()">
+
+<div class="container">
+
+  <!-- Static navbar -->
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">Dashboard</a>
+      </div>
+      <div id="navbar" class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="#">Menu</a></li>
+
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li class="active"><a href="/logout">Log Out <span class="sr-only">(current)</span></a></li>
+        </ul>
+      </div><!--/.nav-collapse -->
+    </div><!--/.container-fluid -->
+  </nav>
+
+  <div class="row">
+      <h1>Dashboard</h1>
+      <div class="row">
+        <div class="col-lg-2">
+          <img ng-src="{{user.gravatarUrl}}">
+        </div>
+        <div class="col-lg-8">
+          <ul>
+            <li>name: {{user.name}}</li>
+            <li>Email: {{user.email}}</li>
+            <li>Member Since: {{user.createdAt}}</li>
+          </ul>
+        </div>
+
+      </div>
+  </div>
+
+</div> <!-- /container -->
+
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="/js/dependencies/sails.io.js"></script>
+<script src="/js/dependencies/jquery-1.11.3.js"></script>
+<script src="/js/dependencies/bootstrap.js"></script>
+<script src="/js/dependencies/angular.min.js"></script>
+<script src="/js/dependencies/angular-toastr.min.js"></script>
+<script src="/js/dependencies/angular-toastr.tpls.min.js"></script>
+<script src="/js/dependencies/angular-route.min.js"></script>
+<script src="/js/private/dashMod.js"></script>
+<script src="/js/private/dashCtrl.js"></script>
+</body>
+</html>

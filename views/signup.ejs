@@ -15,11 +15,18 @@
             <h2>UserAuth</h2>
             <p>Please fill in the fields below signup</p>
             <form ng-submit="runSignup()">
-              <div class="row" ng-repeat="attr in formAttrs track by $index">
+              <div class="row">
                 <div class="col-lg-12">
-                  <input ng-if="$first" ng-model="test.name"  type={{attr.type}} name={{attr.name}} placeholder={{attr.placeholder}} required>
-                  <input ng-if="!$first" ng-model="attr.type" type={{attr.type}} name={{attr.name}} placeholder={{attr.placeholder}} >
-
+                  <input ng-model="name"  type="text" name="name" placeholder="Name" required>
+                </div>
+                <div class="col-lg-12">
+                  <input ng-model="email"  type="email" name="email" placeholder="Email Address" required>
+                </div>
+                <div class="col-lg-12">
+                  <input ng-model="password" ng-maxlength="20" type="password" name="password" placeholder="Password" required>
+                </div>
+                <div class="col-lg-12">
+                  <input ng-model="password2" ng-maxlength="20" type="password" name="password2" placeholder="Password Confirm" required>
                 </div>
               </div>
               <div class="row">
