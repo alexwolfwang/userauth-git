@@ -1,0 +1,16 @@
+body {
+  text-align: center;
+}
+
+input:not(.submit) {
+  /*margin-top: 20px;*/
+  margin-bottom: 20px;
+  width: 240px;
+  height: 60px;
+}
+.login-box, .signup-box {
+  background-color: #fff;
+  /*border: 1px solid #ddd;*/
+  margin: 0 auto;
+  padding: 40px 20px 0 20px;
+}
